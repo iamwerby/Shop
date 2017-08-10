@@ -11,13 +11,14 @@ let gulp = require('gulp'),
 	prefix = require('gulp-autoprefixer'),
 	imagemin = require('gulp-imagemin'),
 	concatCss = require('gulp-concat-css'),
-    babel  = require('gulp-babel');
+    babel  = require('gulp-babel'),
+    sassGlob = require('gulp-sass-glob');;
 
 
 //templates
 gulp.task('templ', function() {
- 	return gulp.src('./dev/*.html')
- 	.pipe(htmlImport('./dev/html/*.html'))
+ 	return gulp.src('./dev/**/*.html')
+ 	.pipe(htmlImport('./dev/html/'))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./prod/'));
 });
@@ -25,7 +26,8 @@ gulp.task('templ', function() {
 
 //styles
 gulp.task('styles', function () {
-	return gulp.src('./dev/scss/style.scss')
+	gulp.src('./dev/scss/style.scss')
+	.pipe(sassGlob())
     .pipe(sass({
             errLogToConsole: true,
             includePaths: ['./dev/scss'],
@@ -97,14 +99,14 @@ gulp.task('clean', function () {
 });
 
 
-gulp.task('watch', ['browser-sync', 'libs', 'css-minify', 'templ', 'scripts'], function () {
+gulp.task('watch', ['browser-sync', 'styles', 'libs', 'css-minify', 'templ', 'scripts'], function () {
 	gulp.watch('dev/scss/**/*.scss', ['styles'])
 	gulp.watch('dev/js/lib/**/*.js', browserSync.reload)
 	gulp.watch('dev/js/**/*.js', ['scripts'])
 	gulp.watch('dev/**/*.html', ['templ']);
 	gulp.watch('dev/**/*.html', browserSync.reload);
 	gulp.watch('dev/css/**/*.css', ['css-minify'])
-	gulp.watch('img/**/*.{png,jpg,jpeg,gif,svg}', {cwd: './dev/'}, ['images']);
+	gulp.watch('images/**/*.{png,jpg,jpeg,gif,svg}', {cwd: './dev/'}, ['images']);
 });
 
 

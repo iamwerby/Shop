@@ -1,1 +1,285 @@
-@import 'components/test';
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fff;
+}
+
+.container {
+	width:1140px;
+	margin: 0 auto;
+}
+
+@mixin mainFont($fontSize: 14px, $fontWeight: 400, $textTransform:normal) {
+	font-family: 'Open Sans', sans-serif;
+	font-size: $fontSize;
+	line-height: $fontSize + 8px;
+	font-weight: $fontWeight;
+	text-decoration: none;
+	text-transform: $textTransform;
+	color:#333333;
+}
+
+/* ---------------- header start ------------------- */
+
+.header {
+	padding: 20px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&-wrapper {
+		background-color: #f7f7f7;
+	}
+
+	&__contacts {
+		@include mainFont(12px);
+		display: flex;
+		
+		&-phone {
+			margin: 0;
+			padding-left: 25px;
+			position: relative;
+
+			&::after {
+				content: "";
+				width: 13px;
+				height: 13px;
+				position: absolute;
+				top:3px;
+				left:3px;
+				background-image: url('../images/phone.png');
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&-email {
+			margin: 0;
+			margin-left: 53px;
+			padding-left: 25px;
+			position: relative;
+
+			& span {
+				font-weight: bold;
+			}
+
+			&::after {
+				@extend .header__contacts-phone::after;
+				background-image: url('../images/email.png');
+			}
+		}
+	}
+
+	&__user-account {
+		padding-right: 15px;
+		position: relative;
+
+			&-toggle {
+				@include mainFont(12px, bold);
+				text-decoration: none;
+
+			&::after {
+				content: "";
+				width: 8px;
+				height: 4px;
+				position: absolute;
+				top:8px;
+				right:0px;
+				background-image: url('../images/arrow-down.png');
+				background-position: center;
+				background-repeat: no-repeat;	
+			}
+		}
+	}
+
+	&__user-menu {
+		flex-direction: column;
+		position: absolute;
+		top:40px;
+		right:0;
+		width: 260px;
+		background-color: #fff;
+		border-top: 2px solid #e24545;
+		display: none; /* flex */
+
+		&-item {
+			@include mainFont(13px);
+			text-decoration: none;
+			padding: 17px 0 17px 30px;
+			position: relative;
+			border-bottom: 1px solid #dddddd;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			&:hover {
+				color:#e24545;
+			}
+
+			&::after {
+				content: "";
+				width: 5px;
+				height: 5px;
+				position: absolute;
+				background-color: #000;
+				left:15px;
+				top:25px;
+			}
+
+			&--active {
+				color:#e24545;
+			}
+		}
+	}
+}
+
+/* ----------------- header finish ----------------- */
+
+
+/* ------------------ navigation start ------------- */
+
+.logo {
+	padding: 40px 0 40px 40px;
+	@include mainFont(28px, bold, uppercase);
+	background-image: url('../images/logo.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+
+	& span {
+		color:#e24545;
+	}
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__menu-item {
+		@include mainFont(14px,bold,uppercase);
+		text-decoration: none;
+		margin-right: 30px;
+
+		&--active {
+			color:#e24545;
+		}
+
+		&--sub {
+			padding-right: 20px;
+			position: relative;
+
+			&::after {
+				content: "";
+				width: 8px;
+				height: 4px;
+				position: absolute;
+				top:8px;
+				right:0px;
+				background-image: url('../images/arrow-down.png');
+				background-position: center;
+				background-repeat: no-repeat;	
+			}
+		}
+
+		&:last-child {
+				margin-right: 0;
+			}
+
+		&:hover {
+			color:#e24545;
+		}
+	}
+}
+
+.user-block {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	&__item {
+		width: 20px;
+		height: 20px;
+		margin-left: 25px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+
+		&-search {
+			background-image: url('../images/search.png');
+			position: relative;
+			
+			&-input {
+				padding: 5px 40px 5px 10px;
+				@include mainFont(14px,bold,uppercase);
+				position: absolute;
+				top:-40px;
+				left:-110px;
+				outline: none;
+				border-radius: 5px;
+				border: 1px solid #ccc;
+				display: none;
+			}
+
+			&-button {
+				position: absolute;
+				top:-40px;
+				right:-101px;
+				display: block;
+				width: 34px;
+				height:34px;
+				background-image: url('../images/search.png');
+				background-repeat: no-repeat;
+				background-position: center;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				display: none;
+			}
+
+		}
+
+		&-cart {
+			background-image: url('../images/bag.png');
+			position: relative;
+
+			&-counter {
+				position: absolute;
+				top:12px;
+				left: 8px;
+				@include mainFont(10px);
+				color:#fff;
+				line-height: 20px;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background-color: #e24545;
+				text-align: center;
+			}
+		}
+
+		&-toggle {
+			position: relative;
+
+			span {
+				position: absolute;
+				display: block;
+				width: 20px;
+				height: 3px;
+				left:0px;
+				top:3px;
+				background-color: #000;
+				box-shadow: 0px 7px 0 #000, 
+							0px 14px 0 #000; 
+			}
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
