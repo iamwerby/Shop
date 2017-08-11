@@ -26,7 +26,7 @@ gulp.task('templ', function() {
 
 //styles
 gulp.task('styles', function () {
-	gulp.src('./dev/scss/style.scss')
+	gulp.src('./dev/scss/**/*.scss')
 	.pipe(sassGlob())
     .pipe(sass({
             errLogToConsole: true,
