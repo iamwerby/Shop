@@ -4,6 +4,7 @@
 
 body {
 	background-color: #fff;
+	min-width: 1140px;
 }
 
 .container {
@@ -372,14 +373,15 @@ body {
 				display:block;
 				padding-right: 0px;
 				padding-left: 25px;
-				background-position: center left;
+				background: none;
+				text-align: center;
 
 				&:hover ~ .slider__item-title2-wrapper .slider__item-title2-spinner {
-					transform:rotate(360deg);
+					transform:rotate(4320deg);
 				}
 
 				&:hover ~ .slider__item-upper {
-					bottom:0;
+					bottom:-1px;
 				}
 			}
 		}
