@@ -586,3 +586,150 @@ body {
 .features__item:last-child::after {
 	background-image: url('../images/features3.png');
 }
+
+/* ----------------- featues finish ----------------- */
+
+
+/* ------------------ categories start ------------- */
+
+.categories {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 100px;
+
+		&:nth-child(even) {
+			flex-direction: row-reverse;
+		}
+
+		&-photo {
+			width: 555px;
+			height: 500px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+
+			& img {
+				width: 100%;
+			}
+		}
+
+		&-right-column {
+			width: 585px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-info {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			flex-direction: column;
+			margin-bottom: 90px;
+		}
+
+		&-title {
+			@include mainFont(36px,900,uppercase);
+			margin:0;
+			text-align: center;
+		}
+
+		&-descr {
+			@include mainFont(14px,400,none);
+			margin:0;
+			margin-bottom: 40px;
+			color:#ccc;
+
+		}
+
+		&-button {
+			@include mainFont(10px,bold,uppercase);
+			display: inline-block;
+			padding: 10px 25px;
+			border:1px solid #ccc;
+			margin:0 auto;
+		}
+
+		&-list {
+			background: linear-gradient(#fff 30px, #e0e0e0 100%);
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			padding: 0px 40px 110px 40px;
+			overflow: hidden;
+
+			&-pagination {
+				position: absolute;
+				bottom:60px;
+				left:50%;
+				margin-left: -20px;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				width: 40px;
+
+				&--active {
+					background-color: red;
+				}
+
+				& span {
+					width: 9px;
+					height: 9px;
+					border:1px solid #ccc;
+					border-radius: 50%;
+				}
+			}
+		}
+
+		&-product {
+			margin: 0px 15px 0 15px;
+			border:1px solid #ccc;
+			width: 220px;
+			display: flex;
+			flex-direction: column;
+
+			&:nth-child(2n +1) {
+				margin-right: 100px;
+			}
+
+			&-photo {
+				width: 220px;
+				height:260px;
+				margin-bottom: 20px;
+
+				& img {
+					display: block;
+					margin: 0 auto;
+					max-width: 100%;
+					height:100%;
+				}
+			}
+
+			&-descr {
+				@include mainFont(14px,400,none);
+				color:#c0c0c0;
+				margin: 0;
+				margin-bottom: 13px;
+				text-align: center;
+			}
+
+			&-title {
+				@include mainFont(20px,bold,uppecase);
+				margin: 0;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+
+			&-price {
+				@include mainFont(15px,bold,uppecase);
+				margin: 0;
+				color:red;
+				text-align: center;
+			}
+		}
+	}
+}

@@ -64,7 +64,7 @@ gulp.task('browser-sync', function () {
 
 //images
 gulp.task('images', function () {
-    gulp.src('./dev/images/*')
+    gulp.src('./dev/images/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./prod/images'));
 
@@ -99,7 +99,7 @@ gulp.task('clean', function () {
 });
 
 
-gulp.task('watch', ['browser-sync', 'styles', 'libs', 'css-minify', 'templ', 'scripts'], function () {
+gulp.task('watch', ['browser-sync', 'styles', 'libs', 'css-minify', 'templ', 'scripts', 'images'], function () {
 	gulp.watch('dev/scss/**/*.scss', ['styles'])
 	gulp.watch('dev/js/lib/**/*.js', browserSync.reload)
 	gulp.watch('dev/js/**/*.js', ['scripts'])
