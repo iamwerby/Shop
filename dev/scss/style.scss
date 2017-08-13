@@ -170,6 +170,10 @@ body.child .footer__info-column > h2 {
 	justify-content: space-between;
 	align-items: center;
 
+	&__menu {
+		margin: 0px;
+	}
+
 	&__menu-item {
 		@include mainFont(14px,bold,uppercase);
 		text-decoration: none;
@@ -302,7 +306,7 @@ body.child .footer__info-column > h2 {
 /* ------------------ slider start ------------- */
 
 .slider {
-	min-height: 600px;
+	max-height: 600px;
 	position: relative;
 	margin-bottom: 100px;
 
@@ -326,6 +330,7 @@ body.child .footer__info-column > h2 {
 			border: 1px solid #000;
 			background-color: transparent;
 			margin-bottom: 7px;
+			cursor: pointer;
 
 			&--active {
 				background-color: #e24545;
@@ -346,6 +351,11 @@ body.child .footer__info-column > h2 {
 		background-repeat: no-repeat;
 		background-position: bottom right;
 		position: relative;
+		display: none;
+
+		&.active {
+			display: block;
+		}
 
 		&:nth-of-type(2) {
 			background:url('../images/slider2-1.png') left center no-repeat;
@@ -1236,8 +1246,8 @@ body.child .footer__info-column > h2 {
 			width: 575px;
 			display: flex;
 			align-items: flex-start;
-			border:1px solid black;
 			margin-right: 55px;
+			box-shadow: 0px 20px 60px 5px #000;
 		}
 
 		&-preview {
@@ -1271,7 +1281,6 @@ body.child .footer__info-column > h2 {
 			&-photo {
 				width: 460px;
 				height: 640px;
-				border: 1px solid blue;
 
 				& img {
 					display: block;
@@ -1476,6 +1485,11 @@ body.child .footer__info-column > h2 {
 						outline: none;
 						background-color: #f7f7f7;
 						cursor: pointer;
+
+						&:hover {
+							background-color:red;
+							border-color: black;
+						}
 					}
 
 					&-result {

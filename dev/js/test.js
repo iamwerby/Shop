@@ -4,9 +4,10 @@
 "use strict";
 
 $(document).ready(function() {
-    
-    $('.body').on('click', function () {
-      console.log('hello');
-    })
+  
+
+   $('.slider__pagination-item').on('click', function(){
+   		alert(1);
+   })
 
 });
