@@ -742,6 +742,7 @@ body {
 .popular {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 50px;
 
 	&__header {
 		display: flex;
@@ -968,6 +969,90 @@ body {
 
 /* ----------------- populer finish ----------------- */
 
+/* ------------------ news start ------------- */
+
+.news {
+	display: flex;
+	flex-direction: column-reverse;
+	margin-bottom: 120px;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 0;
+		border-top: 2px solid #eee;
+		border-bottom: 2px solid #eee; 
+		margin-bottom: 40px;
+
+		&-title {
+			margin: 0;
+			@include mainFont(22px,bold,uppercase);
+		}
+
+		&-show-all {
+			@include mainFont(12px,bold,uppercase);
+			color:#fff;
+			background-color: red;
+			padding: 10px 20px;
+			border: none;
+			outline: none;
+		}
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			width: 360px;
+
+			&-photo {
+			display: block;
+			width: 360px;
+			height: 260px;
+			margin-bottom: 40px;
+			background-color: #fff;
+
+				& img {
+					display: block;
+					margin: 0 auto;
+					max-width: 100%;
+				}
+			}
+
+			&-descr {
+				@include mainFont(13px,400,none);
+				color:#c0c0c0;
+				margin: 0;
+				text-align: left;
+				margin-bottom: 33px;
+			}
+
+			&-title {
+				@include mainFont(18px,bold,uppercase);
+				margin: 0;
+				margin-bottom: 20px;
+				text-align: left;
+			}
+
+			&-time {
+				@include mainFont(12px,400,none);
+				color:#c0c0c0;
+				margin-bottom: 12px;
+			}
+
+			&-button {
+				@include mainFont(14px,bold,uppercase);
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
 
 /* ------------------ footer start ------------- */
 
@@ -1120,3 +1205,5 @@ body {
 		background-image: url('../images/facebook.png');
 	}
 }
+
+/* ------------------ footer finish ------------- */
