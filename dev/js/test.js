@@ -19,11 +19,11 @@ $(document).ready(function() {
 
 		$('.slider__item').eq(index).addClass('active');
 
-		if (!$('.slider__item').hasClass('active')) {
-			$('.slider__item').slideUp(500);
+		if ($('.slider__item').hasClass('active')) {
+  				clearInterval(slide);
 		}
 
-		$('.slider__item').eq(index).slideDown(500);
+		$('.slider__item').eq(index).fadeIn(500);
 	})
 
 });

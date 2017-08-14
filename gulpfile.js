@@ -57,7 +57,7 @@ gulp.task('browser-sync', function () {
 	browserSync({
 		server: {
 			baseDir: 'prod',
-			index: "product.html"
+			index: "home.html"
 		},
 		notify: false
 	})
