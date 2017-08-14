@@ -20,7 +20,8 @@ gulp.task('templ', function() {
  	return gulp.src('./dev/**/*.html')
  	.pipe(htmlImport('./dev/html/'))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('./prod/'));
+    .pipe(gulp.dest('./prod/'))
+    .pipe(browserSync.reload({stream: true}))
 });
 
 
@@ -56,7 +57,7 @@ gulp.task('browser-sync', function () {
 	browserSync({
 		server: {
 			baseDir: 'prod',
-			index: "home.html"
+			index: "product.html"
 		},
 		notify: false
 	})
@@ -67,7 +68,6 @@ gulp.task('images', function () {
     gulp.src('./dev/images/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./prod/images'));
-
 });
 
 
@@ -99,17 +99,16 @@ gulp.task('clean', function () {
 });
 
 
-gulp.task('watch', ['browser-sync', 'styles', 'libs', 'css-minify', 'templ', 'scripts', 'images'], function () {
+gulp.task('watch', ['browser-sync', 'styles', 'libs', 'css-minify', 'templ', 'scripts'], function () {
 	gulp.watch('dev/scss/**/*.scss', ['styles'])
 	gulp.watch('dev/js/lib/**/*.js', browserSync.reload)
 	gulp.watch('dev/js/**/*.js', ['scripts'])
 	gulp.watch('dev/**/*.html', ['templ']);
-	gulp.watch('dev/**/*.html', browserSync.reload);
 	gulp.watch('dev/css/**/*.css', ['css-minify'])
-	gulp.watch('images/**/*.{png,jpg,jpeg,gif,svg}', {cwd: './dev/'}, ['images']);
+	// gulp.watch('images/**/*.{png,jpg,jpeg,gif,svg}', {cwd: './dev/'}, ['images']);
 });
 
 
-gulp.task('default', ['styles', 'scripts', 'images', 'templ']);
+gulp.task('default', ['styles', 'scripts', 'templ']);
 gulp.task('dev', ['default', 'watch']);
-gulp.task('prod', ['default', 'complete']);
+gulp.task('prod', ['default', 'images']);
