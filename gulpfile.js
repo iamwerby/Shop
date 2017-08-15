@@ -42,6 +42,7 @@ gulp.task('styles', function () {
 gulp.task('css-minify', ['styles'], function () {
 	return gulp.src([
 		'dev/css/normalize.css',
+		'dev/css/magnifier.css',
         'dev/css/style.css'
 	])
         .pipe(concatCss("style.css"))
@@ -57,7 +58,7 @@ gulp.task('browser-sync', function () {
 	browserSync({
 		server: {
 			baseDir: 'prod',
-			index: "home.html"
+			index: "product.html"
 		},
 		notify: false
 	})
@@ -75,7 +76,8 @@ gulp.task('images', function () {
 gulp.task('libs', function () {
 		gulp.src([
 			'node_modules/jquery/dist/jquery.min.js',
-			'node_modules/moment/min/moment.min.js'
+			'node_modules/moment/min/moment.min.js',
+			'node_modules/magnifier.js/magnifier.js'
 		])
 	    .pipe(concat('lib.js'))
 	    .pipe(uglify())
