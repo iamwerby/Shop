@@ -14,7 +14,7 @@ $(document).ready(function() {
 	$('.slider__item:last-child').prependTo('.slider__container');
 
 
-	var slide = setInterval(slider,2000)
+	var slide = setInterval(slider,6000)
 
 
 	function slider() {

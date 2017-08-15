@@ -732,11 +732,14 @@ body.child .footer__info-column > h2 {
 
 		&-list {
 			background: linear-gradient(#fff 30px, #e0e0e0 100%);
-			display: flex;
-			flex-direction: row;
+			width: 100%;
+			padding-bottom: 110px;
 			position: relative;
-			padding: 0px 40px 110px 40px;
 			overflow: hidden;
+			border-right: 40px solid transparent;
+			border-left: 40px solid transparent;
+			/* border:2px solid red; */
+			/* padding: 20px 40px 120px 40px; */
 
 			&-pagination {
 				position: absolute;
@@ -761,16 +764,27 @@ body.child .footer__info-column > h2 {
 			}
 		}
 
-		&-product {
-			margin: 0px 15px 0 15px;
-			border:1px solid #ccc;
-			width: 220px;
-			display: flex;
-			flex-direction: column;
+		&-container {
+			width: 9999px;
+			padding: 10px;
+			/* border: 2px solid black; */
+			/* display: flex;
+			flex-direction: row;
+			position: relative;
+			justify-content: flex-start; */
+			overflow: hidden;
+			/* padding: 0 20px; */
 
-			&:nth-child(2n +1) {
-				margin-right: 100px;
-			}
+		}
+
+		&-product {
+			/* margin-right: 30px; */
+			float: left;
+			/* border:2px solid yellow; */
+			width: 225px;
+/* 			display: flex; */
+			flex-direction: column;
+			margin-right: 30px;
 
 			&-photo {
 				width: 220px;
