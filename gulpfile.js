@@ -58,7 +58,7 @@ gulp.task('browser-sync', function () {
 	browserSync({
 		server: {
 			baseDir: 'prod',
-			index: "home.html"
+			index: "product.html"
 		},
 		notify: false
 	})
@@ -69,6 +69,13 @@ gulp.task('images', function () {
     gulp.src('./dev/images/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./prod/images'));
+});
+
+//video
+
+gulp.task('video', function () {
+	gulp.src('./dev/video/**/*')
+		.pipe(gulp.dest('./prod/video'))
 });
 
 
@@ -107,10 +114,9 @@ gulp.task('watch', ['browser-sync', 'styles', 'libs', 'css-minify', 'templ', 'sc
 	gulp.watch('dev/js/**/*.js', ['scripts'])
 	gulp.watch('dev/**/*.html', ['templ']);
 	gulp.watch('dev/css/**/*.css', ['css-minify'])
-	// gulp.watch('images/**/*.{png,jpg,jpeg,gif,svg}', {cwd: './dev/'}, ['images']);
 });
 
 
 gulp.task('default', ['styles', 'scripts', 'templ']);
 gulp.task('dev', ['default', 'watch']);
-gulp.task('prod', ['default', 'images']);
+gulp.task('prod', ['default', 'images', 'video']);
