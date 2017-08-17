@@ -1704,3 +1704,31 @@ body.child .footer__info-column > h2 {
 		}
 	}
 }
+
+.registration {
+
+	& .overlay {
+		width: 100%;
+		height:100%;
+		background-color:#000;
+		position:fixed;
+		top:0;
+		left:0;
+		opacity: .8;
+		z-index: 4;
+		display: block;
+	}
+
+	&__content {
+		position:fixed;
+		left:50%;
+		top:390px;
+		width:300px;
+		margin-left:-150px;
+		margin-top:-300px;
+		border:2px solid yellow;
+		background-color: #ccc;
+		z-index:5;
+		padding:30px 20px;
+	}
+}
