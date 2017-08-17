@@ -1,6 +1,7 @@
 <section class="registration">
 	<div class="overlay"></div>
 	<div class="registration__content">
+		<div class="registration__logo"></div>
 		<div class="registration__area">
 			<h4>
 				Your name
@@ -9,13 +10,7 @@
 		</div>
 		<div class="registration__area">
 			<h4>
-				Your surname
-			</h4>
-			<input type="text">
-		</div>
-		<div class="registration__area">
-			<h4>
-				Your surname
+				Your mail
 			</h4>
 			<input type="text">
 		</div>
@@ -35,17 +30,24 @@
 			<h4>
 				your sex
 			</h4>
-			<span>male</span>
-			<input type="radio" name="sex" id="male">
-			<label for="male"></label>
-			<span>female</span>
-			<input type="radio" name="sex" id="female">
-			<label for="female"></label>
+			<div class="registration__area-sex">
+				<div class="registration__area-sex-item">
+					<span>male</span>
+					<input type="radio" name="sex" id="male">
+					<label for="male"></label>
+				</div>
+				<div class="registration__area-sex-item">
+					<span>female</span>
+					<input type="radio" name="sex" id="female">
+					<label for="female"></label>
+				</div>
+			</div>
 		</div>
-		<div class="registration__area">
+		<div class="registration__area-news">
 			<span>Я хочу получать нововсти</span>
 			<input type="checkbox" name="sex" id="yes">
 			<label for="yes"></label>
 		</div>
+		<button class="registration__button">Отправить</button>
 	</div>
 </section>

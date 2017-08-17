@@ -1719,16 +1719,180 @@ body.child .footer__info-column > h2 {
 		display: block;
 	}
 
+	&__logo {
+		position: absolute;
+		border-radius: 50%;
+		border:3px solid #02cfb0;
+		background-color: #747474;
+		width: 64px;
+		height:64px;
+		top:-32px;
+		left:50%;
+		margin-left:-32px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url('../images/registration-logo.png');
+	}
+
 	&__content {
 		position:fixed;
-		left:50%;
-		top:390px;
-		width:300px;
-		margin-left:-150px;
-		margin-top:-300px;
-		border:2px solid yellow;
-		background-color: #ccc;
+		border:5px solid #02cfb0;
+		background-color: #747474;
 		z-index:5;
-		padding:30px 20px;
+		padding:50px 20px 10px 20px;
+		width: 300px;
+		top:40px;
+		left:50%;
+		margin-left: -150px;
+	}
+
+	&__area {
+		padding: 10px;
+
+		& h4 {
+			@include mainFont(14px,bold,uppercase);
+			margin: 0;
+			margin-bottom: 10px;
+			text-align: center;
+			color:#ccc;
+		}
+
+		& input[type='text'], 
+		  input[type='password'] {
+			width:100%;
+			padding: 7px;
+			padding-bottom: 5px;
+			border:none;
+			outline: none;
+			border-bottom: 3px solid #ccc;
+			background-color: #747474;
+			@include mainFont(12px,bold,uppercase);
+			color:#02cfb0;
+
+			&:focus {
+				border-color:#00b498;
+			}
+		}
+		
+		&-sex {
+			margin-top: 10px;
+			display: flex;
+			justify-content: space-around;
+
+			&-item {
+				display: flex;
+				align-items: flex-start;
+
+				input {
+					display: none;
+
+					&:checked + label::before {
+						border-color:#000;
+					}
+
+					&:checked + label::after {
+						content:"";
+						position: absolute;
+						top:1px;
+						left:4px;
+						width: 16px;
+						height:16px;
+						background-color:#02cfb0;
+					}
+				}
+
+				& span {
+					@include mainFont(12px,bold,uppercase);
+					color:#ccc;
+					margin-right: 7px;
+				}
+
+				& label {
+					position: relative;
+					cursor: pointer;
+					width: 20px;
+					height:20px;
+
+					&::before {
+						content:"";
+						position: absolute;
+						top:0;
+						left:0;
+						margin-top: -3px;
+						width: 20px;
+						height:20px;
+						border:2px solid #02cfb0;
+						transition: all .3s;
+					}
+				}
+			}
+		}
+
+		&-news {
+			margin-top: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+
+			& span {
+				@include mainFont(12px,bold,none);
+				margin-right: 7px;
+			}
+
+			& label {
+				width: 50px;
+				height: 25px;
+				position: relative;
+				cursor: pointer;
+
+				&::before {
+					content: "";
+					position:absolute;
+					top:0;
+					left:0;
+					width: 50px;
+					height: 24px;
+					border:2px solid #02cfb0;
+					transition: all .3s;
+				}
+
+				&::after {
+					content: "";
+					position:absolute;
+					top:3px;
+					left:3px;
+					width: 18px;
+					height: 18px;
+					border:2px solid #02cfb0;
+					transition: all .3s;
+				}
+			}
+
+			& input {
+				display: none;
+
+				&:checked + label::before {
+					border-color:#000;
+				}
+
+				&:checked + label::after {
+					left:29px;
+					border-color: transparent;
+					background-color:#02cfb0;
+				}
+			}
+		}
+	}
+
+	&__button {
+		display: block;
+		border: 2px solid #000;
+		outline: none;
+		background-color: #02cfb0;
+		padding: 5px;
+		@include mainFont(13px,bold,uppercase);
+		margin:20px auto 0 auto;
 	}
 }
+
+
