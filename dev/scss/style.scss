@@ -1837,6 +1837,7 @@ body.child .footer__info-column > h2 {
 			& span {
 				@include mainFont(12px,bold,none);
 				margin-right: 7px;
+				color:#ccc;
 			}
 
 			& label {
@@ -1886,11 +1887,13 @@ body.child .footer__info-column > h2 {
 
 	&__button {
 		display: block;
-		border: 2px solid #000;
+		border: 2px solid #009d85;
 		outline: none;
 		background-color: #02cfb0;
-		padding: 5px;
+		padding: 5px 10px;
+		cursor: pointer;
 		@include mainFont(13px,bold,uppercase);
+		color:#ccc;
 		margin:20px auto 0 auto;
 	}
 }
