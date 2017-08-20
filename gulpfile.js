@@ -46,7 +46,8 @@ gulp.task('css-minify', ['styles'], function () {
         'dev/css/style.css',
         'dev/css/slick.css',
         'dev/css/slick-theme.css',
-        'dev/css/animate.css'
+        'dev/css/animate.css',
+        'dev/css/jquery-ui.css'
 	])
         .pipe(concatCss("style.css"))
 		.pipe(cssnano())
@@ -89,7 +90,8 @@ gulp.task('libs', function () {
 			'node_modules/moment/min/moment.min.js',
 			'node_modules/magnifier.js/magnifier.js',
 			'node_modules/slick-carousel/slick/slick.min.js',
-			'node_modules/wowjs/dist/wow.min.js'
+			'node_modules/wowjs/dist/wow.min.js',
+			'node_modules/jquery-ui-dist/jquery-ui.min.js'
 		])
 	    .pipe(concat('lib.js'))
 	    .pipe(uglify())
