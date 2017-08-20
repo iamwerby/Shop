@@ -43,7 +43,10 @@ gulp.task('css-minify', ['styles'], function () {
 	return gulp.src([
 		'dev/css/normalize.css',
 		'dev/css/magnifier.css',
-        'dev/css/style.css'
+        'dev/css/style.css',
+        'dev/css/slick.css',
+        'dev/css/slick-theme.css',
+        'dev/css/animate.css'
 	])
         .pipe(concatCss("style.css"))
 		.pipe(cssnano())
@@ -84,7 +87,9 @@ gulp.task('libs', function () {
 		gulp.src([
 			'node_modules/jquery/dist/jquery.min.js',
 			'node_modules/moment/min/moment.min.js',
-			'node_modules/magnifier.js/magnifier.js'
+			'node_modules/magnifier.js/magnifier.js',
+			'node_modules/slick-carousel/slick/slick.min.js',
+			'node_modules/wowjs/dist/wow.min.js'
 		])
 	    .pipe(concat('lib.js'))
 	    .pipe(uglify())
@@ -119,4 +124,4 @@ gulp.task('watch', ['browser-sync', 'styles', 'libs', 'css-minify', 'templ', 'sc
 
 gulp.task('default', ['styles', 'scripts', 'templ']);
 gulp.task('dev', ['default', 'watch']);
-gulp.task('prod', ['default', 'images', 'video']);
+gulp.task('prod', ['default', 'images']);

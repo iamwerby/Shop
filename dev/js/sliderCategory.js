@@ -2,48 +2,34 @@
 
 $(document).ready(function() {
 
-	var widthIContainer = $('.categories__item-list').innerWidth();
-	var widthItem = $('.categories__item-product').width();
+	const widthIContainer = $('.categories__item-list').innerWidth();
+	let widthItemMen = $('.categories__item-container--men .item').width();
+	$('.categories__item-container--men').width(widthIContainer*$('.item').length);
 
-	$('.categories__item-container').width(widthIContainer*$('.categories__item-product').length);
-
-	$('.categories__item-container').css('left',-widthItem - 35);
-	$('.categories__item-product:last-child').prependTo('.categories__item-container');
-
-
-	var slideIC = setInterval(slider2,2000)
-
-
-	function slider2() {
-		$('.categories__item-container').animate({
-			'margin-left': -widthItem - 35
-		}, 2000, function () {
-			$('.categories__item-product:first-child').appendTo('.categories__item-container');
-			$('.categories__item-container').css('margin-left', -5);
+	function slideMen() {
+		$('.categories__item-container--men').animate({
+			'margin-left': -widthItemMen - 35
+		}, 1000, function () {
+			$('.categories__item-container--men .item:first-child').appendTo('.categories__item-container--men');
+			$('.categories__item-container--men').css('margin-left', -5);
 		})
 	}
 
 
-});
+	let widthItemWomen = $('.categories__item-container--women .item').width();
+	$('.categories__item-container--women').width(widthIContainer*$('.item').length);
 
 
-/*var widthIContainer = $('.categories__item-list').innerWidth();
-	var widthItem = $('.categories__item-product').width();
-
-	$('.categories__item-container').width(widthIContainer*$('.categories__item-product').length);
-
-	$('.categories__item-container').css('left',-widthItem - 35);
-	$('.categories__item-product:last-child').prependTo('.categories__item-container');
-
-
-	var slideIC = setInterval(slider2,4000)
-
-
-	function slider2() {
-		$('.categories__item-container').animate({
-			'margin-left': -widthItem - 35
-		}, 2000, function () {
-			$('.categories__item-product:first-child').appendTo('.categories__item-container');
-			$('.categories__item-container').css('margin-left', -5);
+	function slideWomen() {
+		$('.categories__item-container--women').animate({
+			'margin-left': -widthItemWomen - 35
+		}, 1000, function () {
+			$('.categories__item-container--women .item:first-child').appendTo('.categories__item-container--women');
+			$('.categories__item-container--women').css('margin-left', -5);
 		})
-	}*/
+	}
+
+	setInterval(slideMen,4000)
+	setInterval(slideWomen,2000)
+
+});
