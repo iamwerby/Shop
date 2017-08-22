@@ -1,81 +1,220 @@
 <section class="categories-filter">
 	<div class="container">
-		<div class="categories-filter__left-column">
-			<h2 class="categories-filter__left-column-title-selection">
-				categories
-			</h2>
-			<ul class="categories-filter__left-column-list">
-				<li class="categories-filter__left-column-list-item categories-filter__left-column-list-item--men">
-					<a href="#">men</a>
-					<span></span>
-					<ul class="categories-filter__left-column-list-sub">
-						<li class="categories-filter__left-column-list-item-sub">
-							<a href="#">T-shirts</a>
-						</li>
-						<li class="categories-filter__left-column-list-item-sub">
-							<a href="#">Shirts</a>
-						</li>
-						<li class="categories-filter__left-column-list-item-sub">
-							<a href="#">footwear</a>
-						</li>
-					</ul>
-				</li>
-				<li class="categories-filter__left-column-list-item categories-filter__left-column-list-item--women">
-					<a href="#">women</a>
-					<span></span>
-					<ul class="categories-filter__left-column-list-sub">
-						<li class="categories-filter__left-column-list-item-sub">
-							<a href="#">T-shirts</a>
-						</li>
-						<li class="categories-filter__left-column-list-item-sub">
-							<a href="#">Shirts</a>
-						</li>
-						<li class="categories-filter__left-column-list-item-sub">
-							<a href="#">footwear</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-			<h2 class="categories-filter__left-column-title-selection">
-				color
-			</h2>
-			<div class="color-list">
-				<input type="radio" name="color" id="color1" value="#525252">
-				<label for="color1" class="color-list__item"></label>
-				<input type="radio" name="color" id="color2" value="#e245c3">
-				<label for="color2" class="color-list__item"></label>
-				<input type="radio" name="color" id="color3" value="#80c386">
-				<label for="color3" class="color-list__item"></label>
-				<input type="radio" name="color" id="color4" value="#45b0e2">
-				<label for="color4" class="color-list__item"></label>
-				<input type="radio" name="color" id="color5" value="#cccccc">
-				<label for="color5" class="color-list__item"></label>
+		<div class="categories-filter-wrapper">
+			<div class="categories-filter__left-column">
+				<h2 class="categories-filter__left-column-title-selection">
+					categories
+				</h2>
+				<ul class="categories-filter__left-column-list">
+					<li class="categories-filter__left-column-list-item categories-filter__left-column-list-item--men">
+						<a href="#">men</a>
+						<span></span>
+						<ul class="categories-filter__left-column-list-sub">
+							<li class="categories-filter__left-column-list-item-sub">
+								<a href="#">T-shirts</a>
+							</li>
+							<li class="categories-filter__left-column-list-item-sub">
+								<a href="#">Shirts</a>
+							</li>
+							<li class="categories-filter__left-column-list-item-sub">
+								<a href="#">footwear</a>
+							</li>
+						</ul>
+					</li>
+					<li class="categories-filter__left-column-list-item categories-filter__left-column-list-item--women">
+						<a href="#">women</a>
+						<span></span>
+						<ul class="categories-filter__left-column-list-sub">
+							<li class="categories-filter__left-column-list-item-sub">
+								<a href="#">T-shirts</a>
+							</li>
+							<li class="categories-filter__left-column-list-item-sub">
+								<a href="#">Shirts</a>
+							</li>
+							<li class="categories-filter__left-column-list-item-sub">
+								<a href="#">footwear</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<h2 class="categories-filter__left-column-title-selection">
+					color
+				</h2>
+				<div class="color-list">
+					<input type="radio" name="color" id="color1" value="#525252">
+					<label for="color1" class="color-list__item"></label>
+					<input type="radio" name="color" id="color2" value="#e245c3">
+					<label for="color2" class="color-list__item"></label>
+					<input type="radio" name="color" id="color3" value="#80c386">
+					<label for="color3" class="color-list__item"></label>
+					<input type="radio" name="color" id="color4" value="#45b0e2">
+					<label for="color4" class="color-list__item"></label>
+					<input type="radio" name="color" id="color5" value="#cccccc">
+					<label for="color5" class="color-list__item"></label>
+				</div>
+				<h2 class="categories-filter__left-column-title-selection">
+					size
+				</h2>
+				<div class="size-list">
+					<input type="radio" name="size" id="size1" value="xs">
+					<label for="size1" class="size-list__item"">xs</label>
+					<input type="radio" name="size" id="size2" value="s">
+					<label for="size2" class="size-list__item">s</label>
+					<input type="radio" name="size" id="size3" value="m">
+					<label for="size3" class="size-list__item">m</label>
+					<input type="radio" name="size" id="size4" value="l">
+					<label for="size4" class="size-list__item">l</label>
+					<input type="radio" name="size" id="size5" value="xl">
+					<label for="size5" class="size-list__item">xl</label>
+				</div>
+				<h2 class="categories-filter__left-column-title-selection">
+					price
+				</h2>
+				<div class="slider-range">
+					<div class="slider-range__input"></div>
+					<div class="slider-range__result">
+						<b>Range price:</b>
+		  				<input type="text" id="amount" class="slider-range__result-item">
+		  				<span>-</span>
+		  				<input type="text" id="amount1" class="slider-range__result-item">
+					</div>
+				</div>
+				<h2 class="categories-filter__left-column-title-selection">
+					recent products
+				</h2>
+				<div class="recent-products">
+					<a href="#" class="recent-products__item">
+						<div class="recent-products__item-photo">
+							<img src="images/mens-wear-category.jpg" alt="">
+						</div>
+						<div class="recent-products__item-descr">
+							<h4 class="recent-products__item-title">title</h4>
+							<p class="recent-products__item-price">$33.33</p>
+						</div>
+					</a>
+					<a href="#" class="recent-products__item">
+						<div class="recent-products__item-photo">
+							<img src="images/mens-wear-category.jpg" alt="">
+						</div>
+						<div class="recent-products__item-descr">
+							<h4 class="recent-products__item-title">title</h4>
+							<p class="recent-products__item-price">$33.33</p>
+						</div>
+					</a>
+					<a href="#" class="recent-products__item">
+						<div class="recent-products__item-photo">
+							<img src="images/mens-wear-category.jpg" alt="">
+						</div>
+						<div class="recent-products__item-descr">
+							<h4 class="recent-products__item-title">title</h4>
+							<p class="recent-products__item-price">$33.33</p>
+						</div>
+					</a>
+				</div>
 			</div>
-			<h2 class="categories-filter__left-column-title-selection">
-				size
-			</h2>
-			<div class="size-list">
-				<input type="radio" name="size" id="size1" value="xs">
-				<label for="size1" class="size-list__item"">xs</label>
-				<input type="radio" name="size" id="size2" value="s">
-				<label for="size2" class="size-list__item">s</label>
-				<input type="radio" name="size" id="size3" value="m">
-				<label for="size3" class="size-list__item">m</label>
-				<input type="radio" name="size" id="size4" value="l">
-				<label for="size4" class="size-list__item">l</label>
-				<input type="radio" name="size" id="size5" value="xl">
-				<label for="size5" class="size-list__item">xl</label>
-			</div>
-			<h2 class="categories-filter__left-column-title-selection">
-				price
-			</h2>
-			<div class="slider-range">
-				<div class="slider-range__input"></div>
-				<div class="slider-range__result">
-					<b>Range price:</b>
-	  				<input type="text" id="amount" class="slider-range__result-item">
-	  				<span>-</span>
-	  				<input type="text" id="amount1" class="slider-range__result-item">
+			<div class="categories-filter__right-column">
+				<div class="categories-filter__right-column-header">
+					<button type="button" class="categories-filter__right-column-view categories-filter__right-column-view-2x"></button>
+					<button type="button" class="categories-filter__right-column-view categories-filter__right-column-view-4x"></button>
+				</div>
+				<div class="categories-filter__right-column-body clearfix">
+					
+					<article class="item item-new categories-filter__right-column-body-item categories-filter__right-column-body-item2x">
+						<a href="#">
+							<div class="item__photo">
+								<img src="images/men/product-men1.png" alt="" width="220px" height="260px">
+							</div>
+							<p class="item__descr">SuperSoft</p>					
+							<p class="item__title">
+								Muscle Polo Shirt
+							</p>
+							<p class="item__price">$21.99</p>
+							<p class="item__to-cart">
+								add to cart
+							</p>
+							<span class="item__box">
+								new
+							</span>
+						</a>
+					</article>
+
+					<article class="item item-new categories-filter__right-column-body-item categories-filter__right-column-body-item2x">
+						<a href="#">
+							<div class="item__photo">
+								<img src="images/men/product-men1.png" alt="" width="220px" height="260px">
+							</div>
+							<p class="item__descr">SuperSoft</p>					
+							<p class="item__title">
+								Muscle Polo Shirt
+							</p>
+							<p class="item__price">$21.99</p>
+							<p class="item__to-cart">
+								add to cart
+							</p>
+							<span class="item__box">
+								new
+							</span>
+						</a>
+					</article>
+
+					<article class="item item-new categories-filter__right-column-body-item categories-filter__right-column-body-item2x">
+						<a href="#">
+							<div class="item__photo">
+								<img src="images/men/product-men1.png" alt="" width="220px" height="260px">
+							</div>
+							<p class="item__descr">SuperSoft</p>					
+							<p class="item__title">
+								Muscle Polo Shirt
+							</p>
+							<p class="item__price">$21.99</p>
+							<p class="item__to-cart">
+								add to cart
+							</p>
+							<span class="item__box">
+								new
+							</span>
+						</a>
+					</article>
+
+					<article class="item item-new categories-filter__right-column-body-item categories-filter__right-column-body-item2x">
+						<a href="#">
+							<div class="item__photo">
+								<img src="images/men/product-men1.png" alt="" width="220px" height="260px">
+							</div>
+							<p class="item__descr">SuperSoft</p>					
+							<p class="item__title">
+								Muscle Polo Shirt
+							</p>
+							<p class="item__price">$21.99</p>
+							<p class="item__to-cart">
+								add to cart
+							</p>
+							<span class="item__box">
+								new
+							</span>
+						</a>
+					</article>
+
+					<article class="item item-new categories-filter__right-column-body-item categories-filter__right-column-body-item2x">
+						<a href="#">
+							<div class="item__photo">
+								<img src="images/men/product-men1.png" alt="" width="220px" height="260px">
+							</div>
+							<p class="item__descr">SuperSoft</p>					
+							<p class="item__title">
+								Muscle Polo Shirt
+							</p>
+							<p class="item__price">$21.99</p>
+							<p class="item__to-cart">
+								add to cart
+							</p>
+							<span class="item__box">
+								new
+							</span>
+						</a>
+					</article>
+
+				
 				</div>
 			</div>
 		</div>

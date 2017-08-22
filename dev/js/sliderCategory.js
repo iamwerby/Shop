@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-	const widthIContainer = $('.categories__item-list').innerWidth();
+	/*const widthIContainer = $('.categories__item-list').innerWidth();
 	let widthItemMen = $('.categories__item-container--men .item').width();
 	$('.categories__item-container--men').width(widthIContainer*$('.item').length);
 
@@ -30,6 +30,6 @@ $(document).ready(function() {
 	}
 
 	setInterval(slideMen,4000)
-	setInterval(slideWomen,2000)
+	setInterval(slideWomen,2000)*/
 
 });
